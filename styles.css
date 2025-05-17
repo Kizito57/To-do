@@ -32,12 +32,12 @@ body.dark .background {
 
 body.light {
   background-color: white;
-  color: black;
+  color: white;
 }
 
 body.dark {
   background-color: black;
-  color: white;
+  color: black;
 }
 
 .todo-app {
