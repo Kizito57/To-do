@@ -51,7 +51,12 @@ body.dark {
   border-radius: 8px;
   z-index: 1;
 }
+h1{
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
 
+}
 header {
   display: flex;
   justify-content: space-between;
