@@ -10,6 +10,10 @@ const clearBtn = document.getElementById('clear-completed');
 let todos = [];
 let currentFilter = 'all';
 
+// Load todos from localStorage if available
+const saved = localStorage.getItem('todos');
+if (saved) todos = JSON.parse(saved);
+
 themeToggle.addEventListener('click', () => {
   body.classList.toggle('dark');
   body.classList.toggle('light');
@@ -66,6 +70,7 @@ function renderTodos() {
   });
 
   itemsLeft.textContent = `${todos.filter(t => !t.completed).length} items left`;
+  localStorage.setItem('todos', JSON.stringify(todos)); // Save to localStorage
   initDragDrop();
 }
 

@@ -46,7 +46,7 @@ body.dark {
   max-width: 500px;
   margin: auto;
   margin-top: 60px;
-  background: var(--todo-bg);
+ 
   padding: 2rem;
   border-radius: 8px;
   z-index: 1;
@@ -86,7 +86,7 @@ body.dark #icon-sun {
   border: 2px solid #ccc;        
   border-radius: 8px;            
   overflow: hidden;              
-  background-color: inherit;   
+  background-color: white;   
 }
 
 
@@ -123,9 +123,36 @@ li span {
   margin-left: 0.5rem;
 }
 
+
 li input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%; 
+  position: relative;
   cursor: pointer;
+  background-color: transparent;
 }
+
+
+li input[type="checkbox"]:checked::before {
+  content: "";
+  background-image: url('./images/icon-check.svg'); /* Provide correct file name */
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+}
+li input[type="checkbox"]:checked {
+  background-color: hsl(280, 87%, 65%);
+  border-color: hsl(280, 87%, 65%);
+}
+
 
 li button.delete-btn {
   background: none;
